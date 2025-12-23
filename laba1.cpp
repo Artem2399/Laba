@@ -1,5 +1,5 @@
-#include <iostream>
-#include <cmath>
+#include <iostream> // ввод и вывод
+#include <cmath> // набор математических функций и констант
 using namespace std;
 
 struct Para {
