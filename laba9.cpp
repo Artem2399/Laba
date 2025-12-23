@@ -16,7 +16,6 @@ auto sum(First first, Rest... rest)
     return first + sum(rest...);
 }
 
-// ---- Реализация для C++17+ (fold expressions) ----
 template <typename... Args>
 auto Sum17(Args... args)
 {
@@ -38,17 +37,11 @@ auto minOf(First first, Rest... rest)
     return (first < tailMin) ? first : tailMin;
 }
 
-// ---- Реализация для C++17+ (fold expressions) ----
 template <typename... Args>
 auto Min17(Args... args)
 {
     return min({args...});
 }
-
-
-/* =========================
-   Тестирование
-   ========================= */
 
 int main()
 {
