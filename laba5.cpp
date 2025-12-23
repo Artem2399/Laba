@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string>
+#include <string> // работа со строками
 using namespace std;
 
 // Базовый класс Pair
