@@ -2,7 +2,6 @@
 #include <cmath>
 using namespace std;
 
-// Структура-пара для дробных чисел
 struct Para {
     double first;   // дробное число
     double second;  // дробное число, показатель степени
