@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+using namespace std;
 
 // Шаблонный класс CircularBuffer
 template <typename T, size_t Size>
@@ -63,11 +64,11 @@ public:
     }
 
     // Возврат содержимого в виде строки
-    std::string toString() const {
+    string toString() const {
         if (isEmpty()) {
             return "[]";
         }
-        std::ostringstream oss;
+        ostringstream oss;
         oss << "[";
         size_t index = tail;
         for (size_t i = 0; i < count; i++) {
@@ -82,13 +83,13 @@ public:
     }
 
     // Перегрузка оператора вывода в поток
-    friend std::ostream& operator<<(std::ostream& os, const CircularBuffer& buf) {
+    friend ostream& operator<<(ostream& os, const CircularBuffer& buf) {
         os << buf.toString();
         return os;
     }
 
     // Чтение содержимого из потока
-    friend std::istream& operator>>(std::istream& is, CircularBuffer& buf) {
+    friend istream& operator>>(istream& is, CircularBuffer& buf) {
         T value;
         while (is >> value) {
             buf.enqueue(value);
@@ -109,32 +110,32 @@ int main() {
     buffer.enqueue(4);
     buffer.enqueue(5);
 
-    std::cout << "Буфер после заполнения: " << buffer << std::endl;
-    std::cout << "Размер: " << buffer.size() << std::endl;
-    std::cout << "Полный? " << (buffer.isFull() ? "Да" : "Нет") << std::endl;
+    cout << "Буфер после заполнения: " << buffer << endl;
+    cout << "Размер: " << buffer.size() << endl;
+    cout << "Полный? " << (buffer.isFull() ? "Да" : "Нет") << endl;
 
     // Добавляем еще один элемент (автоперезапись)
     buffer.enqueue(6);
-    std::cout << "Буфер после добавления 6: " << buffer << std::endl;
+    cout << "Буфер после добавления 6: " << buffer << endl;
 
     // Извлекаем элементы
-    std::cout << "Извлечен: " << buffer.dequeue() << std::endl;
-    std::cout << "Буфер после извлечения: " << buffer << std::endl;
+    cout << "Извлечен: " << buffer.dequeue() << endl;
+    cout << "Буфер после извлечения: " << buffer << endl;
 
     // Очистка
     buffer.clear();
-    std::cout << "Буфер после очистки: " << buffer << std::endl;
-    std::cout << "Пустой? " << (buffer.isEmpty() ? "Да" : "Нет") << std::endl;
+    cout << "Буфер после очистки: " << buffer << endl;
+    cout << "Пустой? " << (buffer.isEmpty() ? "Да" : "Нет") << endl;
 
     // Тестирование с другими типами
-    CircularBuffer<std::string, 3> strBuffer;
+    CircularBuffer<string, 3> strBuffer;
     strBuffer.enqueue("Hello");
     strBuffer.enqueue("World");
     strBuffer.enqueue("C++");
 
-    std::cout << "\nСтроковый буфер: " << strBuffer << std::endl;
+    cout << "\nСтроковый буфер: " << strBuffer << endl;
     strBuffer.enqueue("New");
-    std::cout << "После добавления 'New': " << strBuffer << std::endl;
+    cout << "После добавления 'New': " << strBuffer << endl;
 
     return 0;
 }
