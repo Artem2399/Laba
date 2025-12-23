@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include <stdexcept>
+#include <stdexcept> // предоставляет набор стандартных классов исключений для обработки ошибок
 
 using namespace std;
 
