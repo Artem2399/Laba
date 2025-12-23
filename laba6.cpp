@@ -1,5 +1,5 @@
 #include <iostream>
-#include <iomanip>
+#include <iomanip> // управления форматированием данных в потоках вывода (setw)
 
 using namespace std;
 
