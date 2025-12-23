@@ -1,6 +1,5 @@
 #include <iostream>
 
-// ===== Constexpr лямбда: факториал =====
 constexpr auto factorial = [](int n) {
     int prod = 1;
     for (int i = 1; i <= n; ++i) {
@@ -9,7 +8,6 @@ constexpr auto factorial = [](int n) {
     return prod;
 };
 
-// ===== Constexpr лямбда: НОД =====
 constexpr auto gcd = [](int a, int b) {
     while (b != 0) {
         int temp = b;
