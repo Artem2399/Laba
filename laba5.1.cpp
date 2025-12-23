@@ -98,9 +98,8 @@ public:
     }
 };
 
-// Пример использования
 int main() {
-    // Создаем циклический буфер на 5 элементов типа int
+    // циклический буфер на 5 элементов типа int
     CircularBuffer<int, 5> buffer;
 
     // Добавляем элементы
@@ -114,7 +113,7 @@ int main() {
     cout << "Размер: " << buffer.size() << endl;
     cout << "Полный? " << (buffer.isFull() ? "Да" : "Нет") << endl;
 
-    // Добавляем еще один элемент (автоперезапись)
+    // Добавляем еще один элемент
     buffer.enqueue(6);
     cout << "Буфер после добавления 6: " << buffer << endl;
 
@@ -133,7 +132,7 @@ int main() {
     strBuffer.enqueue("World");
     strBuffer.enqueue("C++");
 
-    cout << "\nСтроковый буфер: " << strBuffer << endl;
+    cout << "Строковый буфер: " << strBuffer << endl;
     strBuffer.enqueue("New");
     cout << "После добавления 'New': " << strBuffer << endl;
 
