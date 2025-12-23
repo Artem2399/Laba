@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <sstream>
+#include <sstream> // класс потока для работы со строками через интерфейс потоков
 using namespace std;
 
 // Шаблонный класс CircularBuffer
