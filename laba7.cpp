@@ -27,27 +27,21 @@ public:
     MyStdException(const string& m) : invalid_argument(m) {}
 };
 
-//
-// 1. Без спецификации исключений
-//
+// Без спецификации исключений
 double Solve1(LinearEquation e) {
     if (isnan(e.a)  isnan(e.b)  e.a == 0)
         throw 1.0;
     return -e.b / e.a;
 }
 
-//
-// 2. (бывш.) со спецификацией throw() — убрано для C++17
-//
+//  со спецификацией throw() 
 double Solve2(LinearEquation e) {
     if (isnan(e.a)  isnan(e.b)  e.a == 0)
         throw 1.0;
     return -e.b / e.a;
 }
 
-//
-// 3. Со стандартным исключением
-//
+// Со стандартным исключением
 double Solve3(LinearEquation e) {
     if (isnan(e.a)) throw invalid_argument("a is NaN");
     if (isnan(e.b)) throw invalid_argument("b is NaN");
@@ -55,39 +49,33 @@ double Solve3(LinearEquation e) {
     return -e.b / e.a;
 }
 
-//
-// 4. Собственные исключения
-//
-
-// 4.1 пустой класс
+//  пустой класс
 double Solve4_Empty(LinearEquation e) {
     if (isnan(e.a)  isnan(e.b)  e.a == 0)
         throw EmptyException();
     return -e.b / e.a;
 }
 
-// 4.2 класс с сообщением
+//  класс с сообщением
 double Solve4_My(LinearEquation e) {
     if (e.a == 0)
         throw MyException("division by zero");
     return -e.b / e.a;
 }
 
-// 4.3 наследник std::exception
+// наследник exception
 double Solve4_Std(LinearEquation e) {
     if (e.a == 0)
         throw MyStdException("division by zero");
     return -e.b / e.a;
 }
 
-//
 // main — обработка всех исключений
-//
 int main() {
     LinearEquation eq(0, 5); // ошибка: a = 0
 
     try { cout << Solve1(eq) << endl; }
-    catch (double) { cout << "Solve1 error\n"; }
+    catch (double) { cout << "Solve1 error"; }
 
     try { cout << Solve2(eq) << endl; }
     catch (double) { cout << "Solve2 error\n"; }
