@@ -3,8 +3,6 @@
 
 using namespace std;
 
-/* ================= БАЗОВЫЙ КЛАСС ================= */
-
 class Array {
 protected:
     static const int MAX = 100;
@@ -53,8 +51,6 @@ public:
     }
 };
 
-/* ================= КЛАСС BITSTRING ================= */
-
 class BitString : public Array {
 public:
     BitString(int n = 0) : Array(n, 0) {}
@@ -78,8 +74,6 @@ public:
         cout << endl;
     }
 };
-
-/* ================= КЛАСС HEX ================= */
 
 class Hex : public Array {
 public:
@@ -111,8 +105,6 @@ public:
     }
 };
 
-/* ================= DEMO ================= */
-
 int main() {
     cout << "=== BIT STRING ===" << endl;
 
@@ -133,7 +125,7 @@ int main() {
     cout << "b1 + b2 = ";
     bsum.print();
 
-    cout << "\n=== HEX ===" << endl;
+    cout << "=== HEX ===" << endl;
 
     Hex h1(4), h2(4);
 
