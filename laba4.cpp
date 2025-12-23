@@ -111,7 +111,6 @@ istream& operator>>(istream& is, Vector3D& v) {
 }
 
 int main() {
-    cout << "=== ПЕРЕГРУЗКА ОПЕРАЦИЙ VECTOR3D ===\n" << endl;
     
     // Создание объектов
     Vector3D a(1, 2, 3);
@@ -123,7 +122,7 @@ int main() {
     cout << "Длина b = " << b.length() << endl;
     
     // Арифметические операции
-    cout << "\nАрифметические операции:" << endl;
+    cout << "Арифметические операции:" << endl;
     cout << "a + b = " << a + b << endl;
     cout << "a - b = " << a - b << endl;
     cout << "-a = " << -a << endl;
@@ -132,7 +131,7 @@ int main() {
     cout << "3 * b = " << 3 * b << endl;
     
     // Операции с присваиванием
-    cout << "\nОперации с присваиванием:" << endl;
+    cout << "Операции с присваиванием:" << endl;
     Vector3D c = a;
     c += b;
     cout << "c = a; c += b;  c = " << c << endl;
@@ -142,28 +141,26 @@ int main() {
     cout << "d = a; d *= 2;  d = " << d << endl;
     
     // Сравнение
-    cout << "\nСравнение:" << endl;
+    cout << "Сравнение:" << endl;
     cout << "a == b? " << (a == b ? "да" : "нет") << endl;
     cout << "a != b? " << (a != b ? "да" : "нет") << endl;
     cout << "a < b? " << (a < b ? "да" : "нет") << " (по длине)" << endl;
     cout << "a > b? " << (a > b ? "да" : "нет") << " (по длине)" << endl;
     
     // Ввод/вывод
-    cout << "\nВвод/вывод:" << endl;
+    cout << "Ввод/вывод:" << endl;
     Vector3D v;
     cin >> v;
     cout << "Вы ввели: " << v << endl;
     
     // Массив объектов
-    cout << "\nМассив объектов:" << endl;
+    cout << "Массив объектов:" << endl;
     Vector3D arr[3] = {Vector3D(1,0,0), Vector3D(0,1,0), Vector3D(0,0,1)};
     
     for (int i = 0; i < 3; i++) {
         cout << "arr[" << i << "] = " << arr[i] 
              << " длина = " << arr[i].length() << endl;
     }
-    
-    cout << "\n=== КОНЕЦ ===" << endl;
     
     return 0;
 }
