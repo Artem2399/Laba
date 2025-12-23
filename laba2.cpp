@@ -2,7 +2,6 @@
 #include <cmath>
 using namespace std;
 
-// =================== СТРУКТУРА ===================
 struct Vector3D {
     double x, y, z;
     
@@ -59,7 +58,6 @@ bool longer(Vector3D a, Vector3D b) {
     return len(a) > len(b);
 }
 
-// =================== КЛАСС ===================
 class Vector3DClass {
 private:
     double x, y, z;
@@ -119,7 +117,6 @@ public:
 
 // =================== ГЛАВНАЯ ===================
 int main() {
-    cout << "=== ЛАБОРАТОРНАЯ РАБОТА №2. VECTOR3D ===" << endl;
     
     // 1. Работа со структурой
     cout << "\n--- Структура ---" << endl;
