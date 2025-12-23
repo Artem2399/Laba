@@ -96,8 +96,6 @@ ostream& operator<<(ostream& os, const Fraction& f) {
 }
 
 int main() {
-    cout << "=== НАСЛЕДОВАНИЕ ===\n" << endl;
-    
     // 1. Работа с Pair
     cout << "1. Класс Pair:" << endl;
     Pair p1(5, 10);
@@ -110,7 +108,7 @@ int main() {
     cout << "p1 > p3? " << (p1.isGreater(p3) ? "да" : "нет") << endl;
     
     // 2. Работа с Fraction
-    cout << "\n2. Класс Fraction:" << endl;
+    cout << "2. Класс Fraction:" << endl;
     Fraction f1(1, 2, 3, 75);  // 3.75
     Fraction f2(2, 3, 2, 50);  // 2.50
     Fraction f3(4, 5, 3, 75);  // 3.75
@@ -119,14 +117,14 @@ int main() {
     cout << "f2: " << f2 << endl;
     cout << "f3: " << f3 << endl;
     
-    cout << "\nСравнение дробей:" << endl;
+    cout << "Сравнение дробей:" << endl;
     cout << "f1 > f2? " << (f1 > f2 ? "да" : "нет") << endl;
     cout << "f1 < f2? " << (f1 < f2 ? "да" : "нет") << endl;
     cout << "f1 == f3? " << (f1 == f3 ? "да" : "нет") << endl;
     cout << "f1 != f2? " << (f1 != f2 ? "да" : "нет") << endl;
     
     // 3. Принцип подстановки
-    cout << "\n3. Принцип подстановки:" << endl;
+    cout << "3. Принцип подстановки:" << endl;
     
     // Указатель базового класса на объект производного
     Pair* ptr = &f1;
@@ -141,7 +139,7 @@ int main() {
     cout << "Pair p4 = f1: " << p4 << endl;
     
     // 4. Массивы
-    cout << "\n4. Массивы объектов:" << endl;
+    cout << "4. Массивы объектов:" << endl;
     
     // Массив Pair
     Pair arr1[2] = {Pair(1, 2), Pair(3, 4)};
@@ -160,7 +158,7 @@ int main() {
     cout << endl;
     
     // 5. Динамические объекты
-    cout << "\n5. Динамические объекты:" << endl;
+    cout << "5. Динамические объекты:" << endl;
     Pair* dyn1 = new Pair(10, 20);
     Fraction* dyn2 = new Fraction(5,5,7,25);
     
@@ -174,8 +172,6 @@ int main() {
     delete dyn1;
     delete dyn2;
     delete poly;
-    
-    cout << "\n=== КОНЕЦ ===" << endl;
     
     return 0;
 }
