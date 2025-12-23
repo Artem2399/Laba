@@ -8,12 +8,9 @@ double median(T* mas, int size);
 
 int main() {
     int n;
-
     cout << "Vvedite razmer massiva: ";
     cin >> n;
-
     int mas[n];
-
     for (int i = 0; i < n; i++) {
         cout << "Vvedite znachenie massiva: ";
         cin >> mas[i];
@@ -21,9 +18,7 @@ int main() {
 
     // Вызов шаблонной функции
     double result = median(mas, n);
-
     cout << "Mediana massiva: " << result << endl;
-
     return 0;
 }
 
